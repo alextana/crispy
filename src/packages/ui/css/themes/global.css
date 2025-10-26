@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@theme inline {
+	--color-surface: var(--surface);
+	--color-surface-content: var(--surface-content);
+	--color-primary: var(--primary);
+	--color-primary-content: var(--primary-content);
+	--color-secondary: var(--secondary);
+	--color-secondary-content: var(--secondary-content);
+	--color-border: var(--border);
+	--color-outline: var(--outline);
+	--color-shadow: var(--shadow);
+	--color-destructive: var(--destructive);
+	--color-destructive-content: var(--destructive-content);
+}
+
+:root {
+	--background: oklch(12.2% 0 0);
+	--surface: oklch(26.9% 0 0);
+	--surface-content: oklch(87% 0 0);
+	--primary: oklch(54.6% 0.245 262.881);
+	--primary-content: oklch(93.2% 0.032 255.585);
+	--secondary: oklch(27.9% 0.041 260.031);
+	--secondary-content: oklch(92.9% 0.013 255.508);
+	--border: oklch(37.1% 0 0);
+	--outline: oklch(62.3% 0.214 259.815);
+	--shadow: oklch(20.5% 0 0);
+	--destructive: oklch(50.5% 0.213 27.518);
+	--destructive-content: oklch(88.5% 0.062 18.334);
+}

@@ -12,6 +12,8 @@ dist
 dist-ssr
 *.local
 
+/src/packages/ui/widgets/example/*
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
