@@ -49,7 +49,7 @@ const Popover = ({
 	const ref = useRef(null);
 
 	const containerTheme = cva(
-		"absolute top-0 z-[-1] min-h-[150px] transform rounded-[25px] border border border-neutral-800 bg-surface px-4 pt-[30px] pb-4 text-surface-content shadow-md inset-shadow-2xs inset-shadow-neutral-600",
+		"absolute top-0 z-[1] min-h-[150px] transform rounded-[25px] border border-neutral-800 bg-surface px-2 pt-[45px] pb-4 text-surface-content shadow-md inset-shadow-2xs inset-shadow-neutral-600",
 		{
 			variants: {
 				origin: {
@@ -71,8 +71,8 @@ const Popover = ({
 	return (
 		<div data-popover className="relative w-max" ref={ref}>
 			{direction && (
-				<div className="relative" data-slot="trigger">
-					<div className="trigger z-[50]" aria-controls={popoverId}>
+				<div data-slot="trigger" data-test="popover-trigger">
+					<div className="relative trigger z-[2]" aria-controls={popoverId}>
 						{/**
 						 * Trigger
 						 */}
@@ -156,8 +156,8 @@ const Popover = ({
 						<motion.div
 							animate={openAtom ? "open" : "closed"}
 							data-slot="default"
-							className="overflow-y-scroll"
-							style={{ maxHeight: POPOVER_HEIGHT - 40 }}
+							className="overflow-y-scroll py-2 px-1"
+							style={{ maxHeight: POPOVER_HEIGHT - 60 }}
 							initial={{
 								opacity: 0,
 							}}
@@ -197,13 +197,14 @@ const Action = ({ children }: { children: React.ReactNode }) => {
 	const [_, setOpenAtom] = useAtom(isPopOverOpenAtom);
 
 	return (
-		<button
+		<Button
 			type="button"
+			variant="ghost"
+			className="w-full block mb-2 text-left cursor-pointer"
 			onClick={() => setOpenAtom(false)}
-			className="w-full text-left mb-2 py-2 px-4 rounded-xl hover:bg-neutral-700"
 		>
 			{children}
-		</button>
+		</Button>
 	);
 };
 

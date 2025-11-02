@@ -4,6 +4,7 @@ import { buttonTheme } from "./theme";
 type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
 	VariantProps<typeof buttonTheme> & {
 		ref?: React.Ref<HTMLButtonElement>;
+		fluid?: boolean;
 	};
 
 const Button = ({
