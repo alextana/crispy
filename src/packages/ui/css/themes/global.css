@@ -27,4 +27,6 @@
 	--shadow: oklch(20.5% 0 0);
 	--destructive: oklch(50.5% 0.213 27.518);
 	--destructive-content: oklch(88.5% 0.062 18.334);
+
+	background-color: var(--background);
 }
