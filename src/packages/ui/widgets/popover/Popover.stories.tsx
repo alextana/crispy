@@ -53,17 +53,24 @@ export const Primary: Story = {
 		children: <></>,
 		width: 200,
 	},
-	render: () => (
-		<div className="w-screen h-screen">
-			<Popover>
-				<Popover.Content>
-					{actions.map((action) => (
-						<Popover.Action key={action.id}>{action.label}</Popover.Action>
-					))}
-				</Popover.Content>
-			</Popover>
-		</div>
-	),
+	render: () => {
+		const handleAction = () => {
+			console.log("action!");
+		};
+		return (
+			<div className="w-screen h-screen">
+				<Popover>
+					<Popover.Content>
+						{actions.map((action) => (
+							<Popover.Action key={action.id} onClick={handleAction}>
+								{action.label}
+							</Popover.Action>
+						))}
+					</Popover.Content>
+				</Popover>
+			</div>
+		);
+	},
 };
 
 export const Right: Story = {
