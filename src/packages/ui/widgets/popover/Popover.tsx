@@ -185,10 +185,12 @@ const Action = ({
 	children,
 	onClick,
 	closeOnAction = false,
+	icon = false,
 }: {
 	closeOnAction?: boolean;
 	children: React.ReactNode;
 	onClick?: () => void;
+	icon: React.ReactNode;
 }) => {
 	const { setOpen } = usePopoverContext();
 
@@ -204,6 +206,7 @@ const Action = ({
 		<Button
 			type="button"
 			variant="ghost"
+			icon={icon}
 			className="w-full block mb-2 text-left cursor-pointer"
 			onClick={handleClick}
 		>

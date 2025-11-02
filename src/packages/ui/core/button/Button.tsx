@@ -1,10 +1,12 @@
 import type { VariantProps } from "class-variance-authority";
-import { buttonTheme } from "./theme";
+import { buttonTheme, iconTheme } from "./theme";
 
 type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
 	VariantProps<typeof buttonTheme> & {
 		ref?: React.Ref<HTMLButtonElement>;
 		fluid?: boolean;
+		icon?: React.ReactNode;
+		iconPosition?: "left" | "right";
 	};
 
 const Button = ({
@@ -15,6 +17,8 @@ const Button = ({
 	onClick,
 	type,
 	children,
+	icon,
+	iconPosition,
 	...props
 }: ButtonProps) => {
 	return (
@@ -25,7 +29,14 @@ const Button = ({
 			className={`${className} ${buttonTheme({ size, variant })}`}
 			{...props}
 		>
-			{children}
+			{icon && (
+				<span className={iconTheme({ iconPosition })} data-morph="button-icon">
+					{icon}
+				</span>
+			)}
+			<span className="block" data-morph="button-label">
+				{children}
+			</span>
 		</button>
 	);
 };
