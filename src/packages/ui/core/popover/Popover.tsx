@@ -1,7 +1,7 @@
 import { Plus } from "lucide-react";
 import { motion, spring } from "motion/react";
 import { createContext, useContext, useId, useRef, useState } from "react";
-import Button from "../../core/button/Button";
+import Button from "../button/Button";
 import { useBestDirection } from "./hooks/useBestDirection";
 import { ANIMATION_VARS, containerTheme } from "./theme";
 
