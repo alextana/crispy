@@ -143,6 +143,15 @@ const Popover = ({
 								maxHeight: POPOVER_HEIGHT,
 							}}
 						>
+							{open && label && (
+								<span
+									data-morph="popover-label"
+									className="absolute top-4 text-sm uppercase font-bold left-5 z-[3]"
+								>
+									{label}
+								</span>
+							)}
+
 							<motion.div
 								animate={open ? "open" : "closed"}
 								data-slot="default"
